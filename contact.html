@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – Future Computer Center</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">FCC</span>
+    <span class="brand-full">Future Computer Center</span>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="courses.html" class="nav-link">Courses</a></li>
+    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+    <li><a href="courses.html" class="nav-btn">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="page-hero-content">
+    <span class="section-tag">Get In Touch</span>
+    <h1>Contact <em>Us</em></h1>
+    <p>We'd love to hear from you. Reach out for admissions, queries, or anything else.</p>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> <span>/</span> <span>Contact</span>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container contact-grid">
+
+    <!-- Info Cards -->
+    <div class="contact-info">
+      <h2>Let's <em>Connect</em></h2>
+      <p>Visit us, call us, or drop us a message. Our team responds within 24 hours.</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Our Location</h4>
+            <p>123 Tech Street, Karol Bagh,<br>New Delhi – 110005, India</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Phone Number</h4>
+            <p>+91 98765 43210<br>+91 11 4567 8901</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h4>Email Address</h4>
+            <p>info@futurecc.in<br>admissions@futurecc.in</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Monday – Saturday: 9:00 AM – 7:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-section">
+        <h4>Follow Us</h4>
+        <div class="social-links big-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <div class="form-header">
+        <h3>Send Us a Message</h3>
+        <p>Fill in the form below and we'll get back to you shortly.</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" placeholder="Enter first name" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" placeholder="Enter last name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label for="course">Course Interested In</label>
+          <select id="course">
+            <option value="">Select a course...</option>
+            <option value="graphic">Graphic Design</option>
+            <option value="web">Web Design (HTML, CSS, JS)</option>
+            <option value="basic">Basic Computer Course</option>
+            <option value="excel">Advanced Excel</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" rows="5" placeholder="Tell us about your query, goals, or anything you'd like to know..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-w" id="submitBtn">
+          <span id="btnText">Send Message ✦</span>
+        </button>
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! We've received your message and will respond within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Find Us</span>
+      <h2>We're Located in the <em>Heart</em> of Delhi</h2>
+    </div>
+    <div class="map-placeholder">
+      <div class="map-inner">
+        <div class="map-pin">📍</div>
+        <h3>Future Computer Center</h3>
+        <p>123 Tech Street, Karol Bagh, New Delhi – 110005</p>
+        <a href="https://maps.google.com" target="_blank" class="btn-primary" style="margin-top:1rem;display:inline-block;">Open in Google Maps</a>
+      </div>
+      <div class="map-grid-bg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">FAQ</span>
+      <h2>Common <em>Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What are the admission requirements? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Anyone can join our courses! No prior computer experience is required for Basic Computer or Graphic Design courses. Web Design requires basic computer knowledge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer part-time or weekend batches? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes! We offer morning, afternoon, and evening batches on weekdays, plus dedicated weekend batches for working professionals.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the certificate recognized? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes. Our certificates are government-recognized and accepted by companies across India and abroad.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you provide placement assistance? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Absolutely. We have a dedicated placement cell that helps graduates with job readiness, resume building, and interview preparation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I pay course fees in installments? <span class="faq-arrow">+</span></div>
+        <div class="faq-a">Yes! We offer flexible payment options including 2-installment plans. Contact us for details.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">FCC</span>
+      </div>
+      <p>Empowering students with future-ready digital skills since 2010.</p>
+      <div class="social-links">
+        <a href="#">FB</a><a href="#">IG</a><a href="#">YT</a><a href="#">LI</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="courses.html">Graphic Design</a></li>
+        <li><a href="courses.html">Web Design</a></li>
+        <li><a href="courses.html">Basic Computer</a></li>
+        <li><a href="courses.html">Advanced Excel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul class="contact-list">
+        <li>📍 123 Tech Street, Delhi, India</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@futurecc.in</li>
+        <li>🕐 Mon–Sat: 9AM – 7PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Future Computer Center. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

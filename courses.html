@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses – Future Computer Center</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">FCC</span>
+    <span class="brand-full">Future Computer Center</span>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="courses.html" class="nav-link active">Courses</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+    <li><a href="courses.html" class="nav-btn">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="page-hero-content">
+    <span class="section-tag">Learn &amp; Grow</span>
+    <h1>Our <em>Courses</em></h1>
+    <p>Hands-on, career-focused programs taught by industry professionals.</p>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> <span>/</span> <span>Courses</span>
+  </div>
+</section>
+
+<!-- FILTER -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Courses</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="computer">Computer</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES DETAIL -->
+<section class="courses-detail">
+  <div class="container">
+
+    <!-- Graphic Design -->
+    <div class="course-detail-card" data-category="design" id="graphic">
+      <div class="cd-header">
+        <div class="cd-icon">🎨</div>
+        <div class="cd-title">
+          <span class="cd-tag">Design</span>
+          <h2>Graphic Design</h2>
+          <div class="cd-meta">
+            <span>⏱ 3 Months</span>
+            <span>📅 Daily Batches</span>
+            <span>🏅 Certificate</span>
+            <span>👥 15 Students/Batch</span>
+          </div>
+        </div>
+        <div class="cd-price">
+          <span class="price">₹8,500</span>
+          <span class="price-note">Complete Course</span>
+        </div>
+      </div>
+      <div class="cd-body">
+        <div class="cd-about">
+          <h3>Course Overview</h3>
+          <p>This comprehensive Graphic Design course takes you from design fundamentals to professional-level work. You'll master industry-standard tools and build a stunning portfolio ready for real-world clients.</p>
+          <h3>What You'll Learn</h3>
+          <div class="syllabus-grid">
+            <div class="syl-item"><span>✓</span> Adobe Photoshop (Complete)</div>
+            <div class="syl-item"><span>✓</span> Adobe Illustrator</div>
+            <div class="syl-item"><span>✓</span> Logo &amp; Brand Design</div>
+            <div class="syl-item"><span>✓</span> Typography &amp; Color Theory</div>
+            <div class="syl-item"><span>✓</span> Poster &amp; Banner Design</div>
+            <div class="syl-item"><span>✓</span> Social Media Graphics</div>
+            <div class="syl-item"><span>✓</span> Business Card &amp; Stationery</div>
+            <div class="syl-item"><span>✓</span> Portfolio Building</div>
+          </div>
+        </div>
+        <div class="cd-sidebar">
+          <div class="cd-highlights">
+            <h4>Course Highlights</h4>
+            <ul>
+              <li>Live project-based learning</li>
+              <li>Industry-standard tools</li>
+              <li>Portfolio development</li>
+              <li>Certificate on completion</li>
+              <li>Free software access</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn-primary full-w">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Design -->
+    <div class="course-detail-card featured-card" data-category="web" id="web">
+      <div class="popular-ribbon">Most Popular</div>
+      <div class="cd-header">
+        <div class="cd-icon">🌐</div>
+        <div class="cd-title">
+          <span class="cd-tag">Web</span>
+          <h2>Web Design (HTML, CSS &amp; JavaScript)</h2>
+          <div class="cd-meta">
+            <span>⏱ 4 Months</span>
+            <span>📅 Daily Batches</span>
+            <span>🏅 Certificate</span>
+            <span>👥 12 Students/Batch</span>
+          </div>
+        </div>
+        <div class="cd-price">
+          <span class="price">₹12,000</span>
+          <span class="price-note">Complete Course</span>
+        </div>
+      </div>
+      <div class="cd-body">
+        <div class="cd-about">
+          <h3>Course Overview</h3>
+          <p>The most in-demand skill of the decade. Learn to build modern, responsive websites from scratch using HTML5, CSS3 and JavaScript. You'll code real projects and launch live websites.</p>
+          <h3>What You'll Learn</h3>
+          <div class="syllabus-grid">
+            <div class="syl-item"><span>✓</span> HTML5 – Semantic Markup</div>
+            <div class="syl-item"><span>✓</span> CSS3 – Flexbox &amp; Grid</div>
+            <div class="syl-item"><span>✓</span> Responsive Web Design</div>
+            <div class="syl-item"><span>✓</span> JavaScript – Core &amp; DOM</div>
+            <div class="syl-item"><span>✓</span> Forms &amp; Validation</div>
+            <div class="syl-item"><span>✓</span> CSS Animations</div>
+            <div class="syl-item"><span>✓</span> Website Deployment</div>
+            <div class="syl-item"><span>✓</span> Portfolio Projects (3+)</div>
+          </div>
+        </div>
+        <div class="cd-sidebar">
+          <div class="cd-highlights">
+            <h4>Course Highlights</h4>
+            <ul>
+              <li>Build 3+ real websites</li>
+              <li>Live website deployment</li>
+              <li>GitHub portfolio setup</li>
+              <li>Freelancing guidance</li>
+              <li>Job placement support</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn-primary full-w">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Basic Computer -->
+    <div class="course-detail-card" data-category="computer" id="basic">
+      <div class="cd-header">
+        <div class="cd-icon">💻</div>
+        <div class="cd-title">
+          <span class="cd-tag">Computer</span>
+          <h2>Basic Computer Course</h2>
+          <div class="cd-meta">
+            <span>⏱ 1 Month</span>
+            <span>📅 Daily Batches</span>
+            <span>🏅 Certificate</span>
+            <span>👥 20 Students/Batch</span>
+          </div>
+        </div>
+        <div class="cd-price">
+          <span class="price">₹3,000</span>
+          <span class="price-note">Complete Course</span>
+        </div>
+      </div>
+      <div class="cd-body">
+        <div class="cd-about">
+          <h3>Course Overview</h3>
+          <p>The perfect starting point for anyone new to computers. This practical course covers everything you need to operate computers confidently in a professional environment.</p>
+          <h3>What You'll Learn</h3>
+          <div class="syllabus-grid">
+            <div class="syl-item"><span>✓</span> Computer Basics &amp; Hardware</div>
+            <div class="syl-item"><span>✓</span> Windows OS Operations</div>
+            <div class="syl-item"><span>✓</span> MS Word (Professional)</div>
+            <div class="syl-item"><span>✓</span> MS PowerPoint</div>
+            <div class="syl-item"><span>✓</span> MS Excel (Basic)</div>
+            <div class="syl-item"><span>✓</span> Internet &amp; Email</div>
+            <div class="syl-item"><span>✓</span> Touch Typing</div>
+            <div class="syl-item"><span>✓</span> File Management</div>
+          </div>
+        </div>
+        <div class="cd-sidebar">
+          <div class="cd-highlights">
+            <h4>Course Highlights</h4>
+            <ul>
+              <li>Beginner-friendly pace</li>
+              <li>Practical daily exercises</li>
+              <li>Speed typing training</li>
+              <li>Government recognized cert</li>
+              <li>Flexible batch timings</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn-primary full-w">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Excel -->
+    <div class="course-detail-card" data-category="data" id="excel">
+      <div class="cd-header">
+        <div class="cd-icon">📊</div>
+        <div class="cd-title">
+          <span class="cd-tag">Data</span>
+          <h2>Advanced Excel</h2>
+          <div class="cd-meta">
+            <span>⏱ 2 Months</span>
+            <span>📅 Daily Batches</span>
+            <span>🏅 Certificate</span>
+            <span>👥 15 Students/Batch</span>
+          </div>
+        </div>
+        <div class="cd-price">
+          <span class="price">₹6,000</span>
+          <span class="price-note">Complete Course</span>
+        </div>
+      </div>
+      <div class="cd-body">
+        <div class="cd-about">
+          <h3>Course Overview</h3>
+          <p>Go beyond basic spreadsheets. This course turns you into an Excel power user capable of handling complex data analysis, automation, and financial modeling used by top companies.</p>
+          <h3>What You'll Learn</h3>
+          <div class="syllabus-grid">
+            <div class="syl-item"><span>✓</span> Advanced Formulas &amp; Functions</div>
+            <div class="syl-item"><span>✓</span> VLOOKUP, HLOOKUP, INDEX-MATCH</div>
+            <div class="syl-item"><span>✓</span> Pivot Tables &amp; Charts</div>
+            <div class="syl-item"><span>✓</span> Macros &amp; VBA Basics</div>
+            <div class="syl-item"><span>✓</span> Data Validation &amp; Cleaning</div>
+            <div class="syl-item"><span>✓</span> Dashboard Creation</div>
+            <div class="syl-item"><span>✓</span> Financial Modeling</div>
+            <div class="syl-item"><span>✓</span> Power Query Basics</div>
+          </div>
+        </div>
+        <div class="cd-sidebar">
+          <div class="cd-highlights">
+            <h4>Course Highlights</h4>
+            <ul>
+              <li>Real business datasets</li>
+              <li>Dashboard projects</li>
+              <li>Finance-ready skills</li>
+              <li>MIS Report creation</li>
+              <li>Interview preparation</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn-primary full-w">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container cta-inner">
+    <h2>Not Sure Which Course? <em>Talk to Us!</em></h2>
+    <p>Our counselors will help you choose the perfect course for your goals.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Free Counseling</a>
+      <a href="about.html" class="btn-ghost-light">About Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">FCC</span>
+      </div>
+      <p>Empowering students with future-ready digital skills since 2010.</p>
+      <div class="social-links">
+        <a href="#">FB</a><a href="#">IG</a><a href="#">YT</a><a href="#">LI</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="courses.html">Graphic Design</a></li>
+        <li><a href="courses.html">Web Design</a></li>
+        <li><a href="courses.html">Basic Computer</a></li>
+        <li><a href="courses.html">Advanced Excel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul class="contact-list">
+        <li>📍 123 Tech Street, Delhi, India</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@futurecc.in</li>
+        <li>🕐 Mon–Sat: 9AM – 7PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Future Computer Center. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

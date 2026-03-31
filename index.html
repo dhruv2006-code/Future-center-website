@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Computer Center</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">⬡</span>
+    <span class="brand-text">FCC</span>
+    <span class="brand-full">Future Computer Center</span>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link active">Home</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="courses.html" class="nav-link">Courses</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+    <li><a href="courses.html" class="nav-btn">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">Est. Since 2010 · Trusted by 10,000+</div>
+    <h1 class="hero-title">
+      <span class="line1">Shape Your</span>
+      <span class="line2">Digital Future</span>
+    </h1>
+    <p class="hero-sub">Cutting-edge computer education for the next generation. From Graphic Design to Advanced Excel — we craft professionals.</p>
+    <div class="hero-actions">
+      <a href="courses.html" class="btn-primary">Explore Courses</a>
+      <a href="about.html" class="btn-ghost">Our Story →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">15+</span><span class="label">Courses</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="num">10K+</span><span class="label">Graduates</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="num">98%</span><span class="label">Success Rate</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Graphic Design</span><span class="dot">◆</span>
+    <span>Web Design</span><span class="dot">◆</span>
+    <span>HTML &amp; CSS</span><span class="dot">◆</span>
+    <span>JavaScript</span><span class="dot">◆</span>
+    <span>Basic Computer</span><span class="dot">◆</span>
+    <span>Advanced Excel</span><span class="dot">◆</span>
+    <span>Graphic Design</span><span class="dot">◆</span>
+    <span>Web Design</span><span class="dot">◆</span>
+    <span>HTML &amp; CSS</span><span class="dot">◆</span>
+    <span>JavaScript</span><span class="dot">◆</span>
+    <span>Basic Computer</span><span class="dot">◆</span>
+    <span>Advanced Excel</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- COURSES PREVIEW -->
+<section class="courses-preview" id="courses-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Offer</span>
+      <h2>Our <em>Flagship</em> Courses</h2>
+      <p>Industry-aligned programs designed to take you from beginner to professional.</p>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card" data-delay="0">
+        <div class="card-glow"></div>
+        <div class="card-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>Master Adobe Photoshop, Illustrator, logo design, branding, and visual communication.</p>
+        <div class="card-meta"><span>3 Months</span><span>Certificate</span></div>
+        <a href="courses.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="course-card featured" data-delay="100">
+        <div class="featured-badge">Popular</div>
+        <div class="card-glow"></div>
+        <div class="card-icon">🌐</div>
+        <h3>Web Design</h3>
+        <p>Build stunning websites using HTML5, CSS3 &amp; JavaScript. Responsive design mastery.</p>
+        <div class="card-meta"><span>4 Months</span><span>Certificate</span></div>
+        <a href="courses.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="course-card" data-delay="200">
+        <div class="card-glow"></div>
+        <div class="card-icon">💻</div>
+        <h3>Basic Computer</h3>
+        <p>Typing, MS Office, internet, email, and essential skills every professional needs.</p>
+        <div class="card-meta"><span>1 Month</span><span>Certificate</span></div>
+        <a href="courses.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="course-card" data-delay="300">
+        <div class="card-glow"></div>
+        <div class="card-icon">📊</div>
+        <h3>Advanced Excel</h3>
+        <p>Pivot tables, VLOOKUP, macros, data analysis, dashboards and financial modeling.</p>
+        <div class="card-meta"><span>2 Months</span><span>Certificate</span></div>
+        <a href="courses.html" class="card-link">Learn More →</a>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a href="courses.html" class="btn-primary">View All Courses</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="container why-grid">
+    <div class="why-visual">
+      <canvas id="whyCanvas"></canvas>
+      <div class="why-overlay-text">
+        <span>FUTURE</span><span>READY</span>
+      </div>
+    </div>
+    <div class="why-content">
+      <span class="section-tag">Why Choose Us</span>
+      <h2>Built for <em>Real-World</em> Success</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feat-icon">🎓</div>
+          <div>
+            <h4>Expert Instructors</h4>
+            <p>Learn from industry professionals with 10+ years of hands-on experience.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feat-icon">🖥️</div>
+          <div>
+            <h4>Modern Labs</h4>
+            <p>State-of-the-art computer labs with the latest hardware and software tools.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feat-icon">📜</div>
+          <div>
+            <h4>Certified Programs</h4>
+            <p>Government-recognized certificates valued by top employers nationwide.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feat-icon">🚀</div>
+          <div>
+            <h4>Job Placement Support</h4>
+            <p>Dedicated career counseling and placement assistance for all graduates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Student Stories</span>
+      <h2>Words from Our <em>Graduates</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The web design course transformed my career. I landed a job within 2 weeks of graduating!"</p>
+        <div class="testi-author">
+          <div class="avatar">RA</div>
+          <div><strong>Rahul Arora</strong><span>Web Developer, Delhi</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Advanced Excel taught me skills that directly got me promoted. Incredible value!"</p>
+        <div class="testi-author">
+          <div class="avatar">PS</div>
+          <div><strong>Priya Sharma</strong><span>Finance Analyst, Mumbai</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Started from zero with Basic Computer. Now I run my own graphic design studio!"</p>
+        <div class="testi-author">
+          <div class="avatar">AK</div>
+          <div><strong>Arun Kumar</strong><span>Freelance Designer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container cta-inner">
+    <h2>Ready to Start Your <em>Journey?</em></h2>
+    <p>Join thousands of students who've transformed their careers at Future Computer Center.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+      <a href="courses.html" class="btn-ghost-light">Browse Courses</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">FCC</span>
+      </div>
+      <p>Empowering students with future-ready digital skills since 2010.</p>
+      <div class="social-links">
+        <a href="#">FB</a><a href="#">IG</a><a href="#">YT</a><a href="#">LI</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="courses.html">Graphic Design</a></li>
+        <li><a href="courses.html">Web Design</a></li>
+        <li><a href="courses.html">Basic Computer</a></li>
+        <li><a href="courses.html">Advanced Excel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul class="contact-list">
+        <li>📍 123 Tech Street, Delhi, India</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@futurecc.in</li>
+        <li>🕐 Mon–Sat: 9AM – 7PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Future Computer Center. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
