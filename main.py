@@ -11,11 +11,10 @@ load_dotenv()
 
 app = FastAPI(title="Future Computer Center API")
 
-# 2. CORS Configuration
-# This allows your GitHub Pages site to talk to your Render backend
+# 2. CORS Configuration - Allows your website to talk to this backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For max security later, change to ["https://futurecomputer.com"]
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,6 +23,7 @@ app.add_middleware(
 # 3. API Configurations (Set these in Render Dashboard -> Environment)
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# Use your verified domain email
 FROM_EMAIL     = os.getenv("FROM_EMAIL", "admissions@futurecomputer.com") 
 YOUR_EMAIL     = "frontenddeveloper627@gmail.com"
 
@@ -63,7 +63,7 @@ def generate_ai_summary(form: ContactForm) -> str:
 @app.get("/")
 def health_check():
     """Tells Render the server is healthy"""
-    return {"status": "online", "message": "Future Computer Center Backend is Live"}
+    return {"status": "Backend is live on Render", "info": "Future Computer Center API"}
 
 @app.post("/contact")
 async def handle_contact(form: ContactForm):
@@ -74,9 +74,10 @@ async def handle_contact(form: ContactForm):
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #7b2fff; border-radius: 10px;">
             <h2 style="color: #7b2fff;">New Student Lead</h2>
             <p><strong>Name:</strong> {form.fname} {form.lname}</p>
-            <p><strong>Course:</strong> {form.course}</p>
+            <p><strong>Email:</strong> {form.email}</p>
             <p><strong>Phone:</strong> {form.phone or 'Not provided'}</p>
-            <div style="background: #f4f4f9; padding: 10px; border-radius: 5px;">
+            <p><strong>Course:</strong> {form.course}</p>
+            <div style="background: #f4f4f9; padding: 15px; border-radius: 5px; margin: 10px 0;">
                 <strong>AI Analysis:</strong><br>{ai_summary}
             </div>
             <hr>
@@ -87,7 +88,7 @@ async def handle_contact(form: ContactForm):
         resend.Emails.send({
             "from": FROM_EMAIL,
             "to": YOUR_EMAIL,
-            "subject": f"🔥 New Lead: {form.fname}",
+            "subject": f"🔥 New Lead: {form.fname} ({form.course})",
             "html": email_html,
             "reply_to": form.email
         })
@@ -95,4 +96,4 @@ async def handle_contact(form: ContactForm):
         return {"status": "success"}
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+        raise HTTPException(status_code=500, detail=str(e))
