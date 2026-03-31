@@ -11,7 +11,7 @@ load_dotenv()
 
 app = FastAPI(title="Future Computer Center API")
 
-# 2. CORS Configuration - Allows your website to talk to this backend
+# 2. CORS Configuration - Allows your GitHub website to talk to this backend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -24,7 +24,7 @@ app.add_middleware(
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # Use your verified domain email
-FROM_EMAIL     = os.getenv("FROM_EMAIL", "admissions@futurecomputer.com") 
+FROM_EMAIL     = os.getenv("FROM_EMAIL", "onboarding@resend.dev") 
 YOUR_EMAIL     = "frontenddeveloper627@gmail.com"
 
 # Initialize Clients
@@ -48,21 +48,17 @@ def generate_ai_summary(form: ContactForm) -> str:
     Course: {form.course}
     Message: {form.message}
     
-    Provide:
-    1. A 2-sentence professional summary.
-    2. Priority Level (High/Medium/Low).
+    Provide a 2-sentence summary and a priority level (High/Medium/Low).
     """
     try:
         response = model.generate_content(prompt)
         return response.text
-    except Exception as e:
-        print(f"Gemini Error: {e}")
+    except:
         return "AI Summary unavailable."
 
 # 5. API Endpoints
 @app.get("/")
 def health_check():
-    """Tells Render the server is healthy"""
     return {"status": "Backend is live on Render", "info": "Future Computer Center API"}
 
 @app.post("/contact")
@@ -75,7 +71,6 @@ async def handle_contact(form: ContactForm):
             <h2 style="color: #7b2fff;">New Student Lead</h2>
             <p><strong>Name:</strong> {form.fname} {form.lname}</p>
             <p><strong>Email:</strong> {form.email}</p>
-            <p><strong>Phone:</strong> {form.phone or 'Not provided'}</p>
             <p><strong>Course:</strong> {form.course}</p>
             <div style="background: #f4f4f9; padding: 15px; border-radius: 5px; margin: 10px 0;">
                 <strong>AI Analysis:</strong><br>{ai_summary}
